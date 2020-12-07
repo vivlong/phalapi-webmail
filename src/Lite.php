@@ -1,6 +1,6 @@
 <?php
 
-namespace PhalApi\XMail;
+namespace PhalApi\Webmail;
 
 use PhpImap\Exceptions\ConnectionException;
 use PhpImap\Mailbox;
@@ -20,7 +20,7 @@ class Lite
     {
         $di = \PhalApi\DI();
         $this->debug = $debug;
-        $cfg = $di->config->get('app.XMail.email');
+        $cfg = $di->config->get('app.Webmail.email');
         try {
             $mailbox = new Mailbox(
                 '{'.$cfg['host'].':'.$cfg['port'].'/'.$cfg['protocol'].'/'.$cfg['secure'].'}', // IMAP server

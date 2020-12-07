@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26e2ad40a7a2696fe4fd5ab8b249398e",
+    "content-hash": "5d758b83a288988c4ee718fb53919378",
     "packages": [
         {
             "name": "php-imap/php-imap",
@@ -75,6 +75,10 @@
                 "pop3",
                 "receive emails"
             ],
+            "support": {
+                "issues": "https://github.com/barbushin/php-imap/issues",
+                "source": "https://github.com/barbushin/php-imap/tree/master"
+            },
             "time": "2020-06-14T20:18:24+00:00"
         }
     ],
@@ -86,5 +90,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

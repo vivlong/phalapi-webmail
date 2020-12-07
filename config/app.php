@@ -1,7 +1,7 @@
 <?php
 
 return array(
-    'XMail' => array(
+    'Webmail' => array(
         'email' => array(
             'host' => 'imap.gmail.com',
             'protocol' => 'imap',
