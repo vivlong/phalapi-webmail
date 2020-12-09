@@ -1,4 +1,4 @@
-# WebMail
+# PhalApi 2.x 的WebMail扩展
 PhalApi 2.x扩展类库，基于PHP-IMAP的邮件接收。
 
 ## 安装和配置
