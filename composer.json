@@ -1,26 +1,25 @@
 {
-    "name": "vivlong/phalapi-webmail",
-    "description": "PhalApi 2.x扩展类库，基于PHP-IMAP的邮件接收。",
-    "type": "library",
-    "keywords": [
-        "phalapi", "phalapi-webmail", "webmail"
-    ],
-    "license": "GPL-3.0+",
-    "homepage": "https://www.phalapi.net/",
-    "authors": [
-        {
-            "name": "JamesLiao",
-            "email": "vivlonglz@gmail.com",
-            "homepage": "https://github.com/vivlong",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php-imap/php-imap": "^4.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "PhalApi\\Webmail\\": "src"
-        }
-    }
+	"name": "vivlong/phalapi-webmail",
+	"description": "PhalApi 2.x扩展类库，基于PHP-IMAP的邮件接收。",
+	"type": "library",
+	"keywords": [
+		"phalapi", "phalapi-webmail", "webmail"
+	],
+	"license": "MulanPSL-2.0",
+	"homepage": "https://www.phalapi.net/",
+	"authors": [{
+		"name": "vivlong",
+		"email": "vivlonglz@gmail.com",
+		"homepage": "http://vivlong.github.io",
+		"role": "Developer"
+	}],
+	"require": {
+		"php": ">=7.0.0",
+		"php-imap/php-imap": "^4.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"PhalApi\\Webmail\\": "src"
+		}
+	}
 }

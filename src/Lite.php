@@ -32,9 +32,9 @@ class Lite
             $mailbox->setAttachmentsIgnore(true);
             $this->instance = $mailbox;
         } catch (ConnectionException $ex) {
-            $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__FUNCTION__, ['IMAP connection failed' => $ex->getMessage()]);
+            $di->logger->error(__NAMESPACE__, __FUNCTION__, ['ConnectionException' => $ex->getMessage()]);
         } catch (Exception $ex) {
-            $di->logger->error(__NAMESPACE__.DIRECTORY_SEPARATOR.__FUNCTION__, ['error' => $ex->getMessage()]);
+            $di->logger->error(__NAMESPACE__, __FUNCTION__, ['Exception' => $ex->getMessage()]);
         }
     }
 
@@ -62,7 +62,7 @@ class Lite
         if(!isset($this->instance)) return [];
         $mail_ids = $this->instance->searchMailbox($criteria);
         if ($this->debug) {
-            $di->logger->debug(__NAMESPACE__.DIRECTORY_SEPARATOR.__FUNCTION__, ['data' => $mail_ids]);
+            $di->logger->debug(__NAMESPACE__, __FUNCTION__, ['data' => $mail_ids]);
         }
         $mails = [];
         foreach ($mail_ids as $mail_id) {
@@ -102,7 +102,7 @@ class Lite
             $mail_ids = $this->instance->searchMailbox($criteria);
         }
         if ($this->debug) {
-            $di->logger->debug(__NAMESPACE__.DIRECTORY_SEPARATOR.__FUNCTION__, ['data' => $mail_ids]);
+            $di->logger->debug(__NAMESPACE__, __FUNCTION__, ['data' => $mail_ids]);
         }
         $mails = $this->instance->getMailsInfo($mail_ids);
         return $mails;
@@ -151,7 +151,7 @@ class Lite
         if(!isset($this->instance)) return [];
         $folders = $this->instance->getListingFolders($search);
         if ($this->debug) {
-            $di->logger->debug(__NAMESPACE__.DIRECTORY_SEPARATOR.__FUNCTION__, ['data' => $folders]);
+            $di->logger->debug(__NAMESPACE__, __FUNCTION__, ['data' => $folders]);
         }
         return $folders;
     }
@@ -169,7 +169,7 @@ class Lite
         if(!isset($this->instance)) return [];
         $folders = $this->instance->getMailboxes($search);
         if ($this->debug) {
-            $di->logger->debug(__NAMESPACE__.DIRECTORY_SEPARATOR.__FUNCTION__, ['data' => $folders]);
+            $di->logger->debug(__NAMESPACE__,__FUNCTION__, ['data' => $folders]);
         }
         return $folders;
     }
@@ -185,7 +185,7 @@ class Lite
         if(!isset($this->instance)) return [];
         $count = $this->instance->countMails();
         if ($this->debug) {
-            $di->logger->debug(__NAMESPACE__.DIRECTORY_SEPARATOR.__FUNCTION__, ['data' => $count]);
+            $di->logger->debug(__NAMESPACE__,__FUNCTION__, ['data' => $count]);
         }
         return $count;
     }
