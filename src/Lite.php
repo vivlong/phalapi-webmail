@@ -15,17 +15,21 @@ class Lite
 {
     protected $debug;
     protected $instance;
+    protected $config;
 
-    public function __construct($debug = false)
+    public function __construct($config = null, $debug = false)
     {
         $di = \PhalApi\DI();
-        $this->debug = $debug;
-        $cfg = $di->config->get('app.Webmail.email');
+        $this->debug = $debug || $di->debug;
+        $this->config = $config;
+        if (null == $this->config) {
+            $this->config = $di->config->get('app.Webmail.email');
+        }
         try {
             $mailbox = new Mailbox(
-                '{'.$cfg['host'].':'.$cfg['port'].'/'.$cfg['protocol'].'/'.$cfg['secure'].'}', // IMAP server
-                $cfg['username'], // Username for the before configured mailbox
-                $cfg['password'], // Password for the before configured username
+                '{'.$this->config['host'].':'.$this->config['port'].'/'.$this->config['protocol'].'/'.$this->config['secure'].'}', // IMAP server
+                $this->config['username'], // Username for the before configured mailbox
+                $this->config['password'], // Password for the before configured username
                 null, // Directory, where attachments will be saved (optional)
                 'UTF-8' // Server encoding (optional)
             );
